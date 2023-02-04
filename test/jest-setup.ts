@@ -1,15 +1,14 @@
 import { SetupServer } from '@src/server';
 import supertest from 'supertest';
 
-
 beforeAll(() => {
     const server = new SetupServer();
     server.init();
     global.testRequest = supertest(server.getApp());
-    supertest(server.getApp()).get('/forecast').then(resp => {
-        const { body } = resp;
-        console.log(body);
-    });
-
+    supertest(server.getApp())
+        .get('/forecast')
+        .then((resp) => {
+            const { body } = resp;
+            console.log(body);
+        });
 });
-

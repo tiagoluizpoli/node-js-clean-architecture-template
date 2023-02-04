@@ -1,1 +1,5 @@
-console.log('Hello World');
+import { SetupServer } from "./server";
+
+const server = new SetupServer();
+server.init();
+

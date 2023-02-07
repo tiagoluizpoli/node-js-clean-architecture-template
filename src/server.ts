@@ -5,6 +5,8 @@ import { ExampleController } from '@src/Api/controllers/Example';
 import { Application } from 'express';
 import logger from './logger';
 import * as http from 'http';
+import pinoHttp from 'pino-http';
+import cors from 'cors';
 
 export class SetupServer extends Server {
     private server?: http.Server;
@@ -19,6 +21,8 @@ export class SetupServer extends Server {
 
     private setupExpress(): void {
         this.app.use(bodyParser.json());
+        this.app.use(pinoHttp({ logger }));
+        this.app.use(cors({ origin: '*' }));
     }
 
     private setupControllers(): void {

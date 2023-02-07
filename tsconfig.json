@@ -26,6 +26,21 @@
             ],
             "@test/*": [
                 "./test/*"
+            ],
+            "@Api/*": [
+                "./src/Api/*"
+            ],
+            "@Application/*": [
+                "./src/Application/*"
+            ],
+            "@Contracts/*": [
+                "./src/Contracts/*"
+            ],
+            "@Domain/*": [
+                "./src/Domain/*"
+            ],
+            "@Infrastructure/*": [
+                "./src/Infrastructure/*"
             ]
         },
         "rootDirs": [

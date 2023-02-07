@@ -1,4 +1,7 @@
 {
     "editor.formatOnSave": true,
     "typescript.format.semicolons": "insert",
+    "prettier.configPath": ".prettierrc",
+    "prettier.embeddedLanguageFormatting": "auto",
+    "prettier.requireConfig": true,
 }

@@ -1,7 +1,7 @@
 import './util/module-alias';
 import { Server } from '@overnightjs/core';
 import bodyParser from 'body-parser';
-import { ForecastController } from './controllers/forecast';
+import { ExampleController } from '@src/Api/controllers/Example';
 import { Application } from 'express';
 
 export class SetupServer extends Server {
@@ -19,11 +19,17 @@ export class SetupServer extends Server {
     }
 
     private setupControllers(): void {
-        const forecastController = new ForecastController();
-        this.addControllers([forecastController]);
+        const exmpleController = new ExampleController();
+        this.addControllers([exmpleController]);
     }
 
     public getApp(): Application {
         return this.app;
+    }
+
+    public start(): void {
+        this.app.listen(this.port, () => {
+            console.info(`Server listening on port: ${this.port}`);
+        });
     }
 }

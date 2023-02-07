@@ -11,42 +11,5 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
-    ],
-    "overrides": [
-        {
-            "files": [
-                "** /*.ts",
-                "**/*.tsx"
-            ],
-            "rules": {
-                "linebreak-style": [
-                    "error",
-                    "unix"
-                ],
-                "import/order": [
-                    "error",
-                    {
-                        "groups": [
-                            "index",
-                            "sibling",
-                            "parent",
-                            "internal",
-                            "external",
-                            "builtin",
-                            "object",
-                            "type"
-                        ],
-                        "newlines-between": "always"
-                    },
-                ],
-                "sort-imports": [
-                    "error",
-                    {
-                        "ignoreCase": true,
-                        "ignoreDeclarationSort": true
-                    }
-                ]
-            }
-        }
     ]
 }

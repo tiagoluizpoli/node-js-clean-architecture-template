@@ -4,8 +4,10 @@ import bodyParser from 'body-parser';
 import { ExampleController } from '@src/Api/controllers/Example';
 import { Application } from 'express';
 import logger from './logger';
+import * as http from 'http';
 
 export class SetupServer extends Server {
+    private server?: http.Server;
     constructor(private port = 3000) {
         super();
     }
@@ -26,6 +28,18 @@ export class SetupServer extends Server {
 
     public getApp(): Application {
         return this.app;
+    }
+    public async close(): Promise<void> {
+        if (this.server) {
+            await new Promise((resolve, reject) => {
+                this.server?.close((err) => {
+                    if (err) {
+                        return reject(err);
+                    }
+                    resolve(true);
+                });
+            });
+        }
     }
 
     public start(): void {

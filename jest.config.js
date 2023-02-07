@@ -10,5 +10,6 @@ module.exports = {
     moduleNameMapper: {
         '@src/(.*)': '<rootDir>/src/$1',
         '@test/(.*)': '<rootDir>/test/$1',
+        '@api/(.*)': '<rootDir>/src/Api/$1'
     }
 };
